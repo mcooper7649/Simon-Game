@@ -6,11 +6,13 @@ var userClickedPattern = [];
 
 var started = false;
 var level = 0;
+var replayCount = 0;
 
 $(document).keypress(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     $("#level-instructions").hide();
+    $("#replays-count").text("Replays Used: " + replayCount)
     nextSequence();
     started = true;
   }
@@ -72,7 +74,8 @@ function prevSequence(prevColors){
             animatePress(element)
             
         }, 1000*(index +1));
-    index++});
+    index++;
+    });
     }
 }
 
@@ -93,18 +96,35 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+  replayCount = 0;
 }
 
 $(document).keydown(function(e){
     if (e.keyCode == 32){
         prevSequence(gamePattern);
+        replayCount++
+        $("#replays-count").text("Replays Used: " + replayCount)
         $("#white").addClass("pressed") 
         setTimeout(function(){
             $("#white").removeClass("pressed") 
         }, 200)
-        
+        if (replayCount > 3){
+          playSound("wrong");
+          $("body").addClass("game-over");
+          $("#level-title").text("Game Over, Press Any Key to Restart");
+      
+          setTimeout(function () {
+            $("body").removeClass("game-over");
+          }, 200);
+      
+          startOver();
+        }
     
     }
 })
+
+
+
+
 
 

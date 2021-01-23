@@ -3,6 +3,13 @@ body {
   background-color: #011F3F;
 }
 
+#replays-count {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
@@ -22,7 +29,7 @@ body {
   font-size: 1.2rem;
   margin:  5%;
   color: black;
-  padding-top: 35%;
+  line-height: 2.6rem;
 }
 
 .container {
