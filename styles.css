@@ -10,6 +10,21 @@ body {
   color: #FEF2BF;
 }
 
+#level-instructions {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2em;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+#help-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  margin:  5%;
+  color: black;
+  padding-top: 35%;
+}
+
 .container {
   display: block;
   width: 50%;
@@ -47,7 +62,12 @@ body {
   background-color: yellow;
 }
 
+.purple {
+  background-color: purple;
+}
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+
