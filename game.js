@@ -1,5 +1,5 @@
 
-var buttonColors = ["red", "blue", "green", "yellow"];  //Create our array of colors
+var buttonColors = ["red", "blue", "green", "yellow"];  
 
 var gamePattern = [];   
 var userClickedPattern = [];
@@ -10,6 +10,7 @@ var level = 0;
 $(document).keypress(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
+    $("#level-instructions").hide();
     nextSequence();
     started = true;
   }
